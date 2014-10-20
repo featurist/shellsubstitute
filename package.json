@@ -1,6 +1,6 @@
 {
   "name": "shellsubstitute",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "main": "index.js",
   "directories": {
     "test": "test"
@@ -10,8 +10,7 @@
   },
   "author": "Tim Macfarlane <timmacfarlane@gmail.com>",
   "license": "ISC",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "chai": "^1.9.2",
     "mocha": "^1.21.5"

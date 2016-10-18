@@ -1,4 +1,4 @@
-# Shell Substitute
+# Shell Substitute [![npm version](https://img.shields.io/npm/v/shellsubstitute.svg)](https://www.npmjs.com/package/shellsubstitute) [![npm](https://img.shields.io/npm/dm/shellsubstitute.svg)](https://www.npmjs.com/package/shellsubstitute) [![Build Status](https://travis-ci.org/featurist/shellsubstitute.svg?branch=master)](https://travis-ci.org/featurist/shellsubstitute)
 
 Like shell substitution but for your JS.
 
@@ -10,6 +10,10 @@ Like shell substitution but for your JS.
     // escape
     substitute('Hi \\$USER', {USER: 'Josh'}) // Hi $USER
     substitute('Hi \\${USER}', {USER: 'Josh'}) // Hi ${USER}
+
+    // escape escapes
+    substitute('Hi \\\\$USER', {USER: 'Josh'}) // Hi \$USER
+    substitute('Hi \\\\${USER}', {USER: 'Josh'}) // Hi \${USER}
 
 ## Syntax
 

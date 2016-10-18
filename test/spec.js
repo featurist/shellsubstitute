@@ -27,11 +27,37 @@ describe('shellsubstitute', function () {
     expect(substitute('user: ${USER}1', {})).to.eql('user: 1');
   });
 
-  it('can escape braces with \\', function () {
-    expect(substitute('user: \\${USER}', {USER: 'user'})).to.eql('user: ${USER}');
-  });
+  describe('escapes', function () {
+    it('can escape braces with \\', function () {
+      expect(substitute('user: \\${USER}', {USER: 'user'})).to.eql('user: ${USER}');
+    });
 
-  it('can escape with \\', function () {
-    expect(substitute('user: \\$USER', {USER: 'user'})).to.eql('user: $USER');
+    it('can escape with \\', function () {
+      expect(substitute('user: \\$USER', {USER: 'user'})).to.eql('user: $USER');
+    });
+
+    it('can escape escapes with \\\\', function () {
+      expect(substitute('user: \\\\${USER}', {USER: 'user'})).to.eql('user: \\user');
+    });
+
+    it('can escape escapes with \\\\', function () {
+      expect(substitute('user: \\\\$USER', {USER: 'user'})).to.eql('user: \\user');
+    });
+
+    it('can escape braces with \\\\\\', function () {
+      expect(substitute('user: \\\\\\${USER}', {USER: 'user'})).to.eql('user: \\\\${USER}');
+    });
+
+    it('can escape with \\\\\\', function () {
+      expect(substitute('user: \\\\\\$USER', {USER: 'user'})).to.eql('user: \\\\$USER');
+    });
+
+    it('can escape escapes with \\\\\\\\', function () {
+      expect(substitute('user: \\\\\\\\${USER}', {USER: 'user'})).to.eql('user: \\\\user');
+    });
+
+    it('can escape escapes with \\\\\\\\', function () {
+      expect(substitute('user: \\\\\\\\$USER', {USER: 'user'})).to.eql('user: \\\\user');
+    });
   });
 });
